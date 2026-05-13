@@ -86,18 +86,33 @@ Before running the application, make sure the following tools are installed:
 
 ## Backend Setup
 1. Open a terminal inside the `EcommerceAPI` folder.
-2. Restore the backend dependencies by writing `dotnet restore` in the terminal.
-3. Build the project by writing `dotnet build` in the terminal.
-4. Run the backend API by writing `dotnet run` in the terminal.
-5. After starting successfully, the API will run on http://localhost:5093.
-6. The swagger can be accessed at http://localhost:5093/swagger.
+2. Restore the backend dependencies using:
+```bash
+dotnet restore
+```
+4. Build the project using:
+```bash
+dotnet build
+```
+6. Run the backend API using:
+```bash
+dotnet run
+```
+7. After starting successfully, the API will run on http://localhost:5093.
+8. The swagger can be accessed at http://localhost:5093/swagger.
 
 ## Frontend Setup
 1. Open a terminal inside the `Ecommerce-frontend` folder.
-2. Restore the frontend dependencies by writing `npm install` in the terminal.
-3. Start the Angular development server by writing `npm start` in the terminal.
-4. After starting successfully, the frontend application will run on http://localhost:4200.
-5. Make sure the backend API is running before starting the frontend application.
+2. Restore the frontend dependencies using:
+```bash
+npm install
+```
+4. Start the Angular development server using
+```bash
+npm start
+``` 
+6. After starting successfully, the frontend application will run on http://localhost:4200.
+7. Make sure the backend API is running before starting the frontend application.
 
 ## Backend Tests
 ### Covered Backend Tests
