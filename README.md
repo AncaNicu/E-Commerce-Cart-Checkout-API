@@ -90,16 +90,16 @@ Before running the application, make sure the following tools are installed:
 ```bash
 dotnet restore
 ```
-4. Build the project using:
+3. Build the project using:
 ```bash
 dotnet build
 ```
-6. Run the backend API using:
+4. Run the backend API using:
 ```bash
 dotnet run
 ```
-7. After starting successfully, the API will run on http://localhost:5093.
-8. The swagger can be accessed at http://localhost:5093/swagger.
+5. After starting successfully, the API will run on http://localhost:5093.
+6. The swagger can be accessed at http://localhost:5093/swagger.
 
 ## Frontend Setup
 1. Open a terminal inside the `Ecommerce-frontend` folder.
@@ -107,12 +107,12 @@ dotnet run
 ```bash
 npm install
 ```
-4. Start the Angular development server using
+3. Start the Angular development server using
 ```bash
 npm start
 ``` 
-6. After starting successfully, the frontend application will run on http://localhost:4200.
-7. Make sure the backend API is running before starting the frontend application.
+4. After starting successfully, the frontend application will run on http://localhost:4200.
+5. Make sure the backend API is running before starting the frontend application.
 
 ## Backend Tests
 ### Covered Backend Tests
