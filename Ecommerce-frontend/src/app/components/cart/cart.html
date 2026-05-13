@@ -1,0 +1,98 @@
+<div class="cart-page container py-4">
+
+  <div class="cart-header mb-4">
+    <p class="cart-eyebrow mb-2">Shopping</p>
+    <h2 class="cart-title mb-2">Your Cart</h2>
+    <p class="cart-subtitle mb-0">
+      Review the items you selected before proceeding to checkout.
+    </p>
+  </div>
+
+  @if (cartItems$ | async; as items) {
+
+    @if (items.length === 0) {
+      <div class="empty-cart-card">
+        <div class="empty-cart-icon">
+          <i class="bi bi-cart3"></i>
+        </div>
+
+        <h3 class="empty-cart-title">Your cart is empty</h3>
+        <p class="empty-cart-text">
+          Add some products to your cart to continue.
+        </p>
+
+        <a routerLink="/" class="btn empty-cart-btn">
+          Browse Products
+        </a>
+      </div>
+    }
+
+    @if (items.length > 0) {
+      <div class="cart-list mb-4">
+
+        @for (item of items; track item.id) {
+          <div class="cart-item-card">
+
+            <div class="cart-item-grid">
+              <div class="item-block">
+                <span class="item-label">Product</span>
+                <span class="item-name">{{ item.name }}</span>
+              </div>
+
+              <div class="item-block">
+                <span class="item-label">Price per unit</span>
+                <span class="item-value">{{ item.price | currency }}</span>
+              </div>
+
+              <div class="item-block quantity-block">
+                <label class="item-label" [for]="'qty-' + item.id">Quantity</label>
+                <input
+                  [id]="'qty-' + item.id"
+                  type="number"
+                  min="1"
+                  class="form-control quantity-input"
+                  [value]="item.quantity"
+                  (change)="updateQuantity(item.id, $any($event.target).valueAsNumber)"
+                />
+              </div>
+
+              <div class="item-block">
+                <span class="item-label">Total</span>
+                <span class="item-value">{{ item.price * item.quantity | currency }}</span>
+              </div>
+            </div>
+
+            <div class="item-actions">
+              <button
+                class="btn remove-btn"
+                (click)="removeItem(item.id)">
+                Remove
+              </button>
+            </div>
+
+          </div>
+        }
+
+      </div>
+
+      <div class="cart-footer">
+        <button
+          class="btn clear-cart-btn"
+          (click)="clearCart()">
+          Empty Cart
+        </button>
+
+        <div class="cart-summary">
+          <div class="total-label">Total</div>
+          <div class="total-value">{{ getTotal(items) | currency }}</div>
+        </div>
+
+        <a routerLink="/checkout" class="btn checkout-btn">
+          Proceed to Checkout
+        </a>
+      </div>
+    }
+
+  }
+
+</div>

@@ -1,0 +1,167 @@
+.custom-navbar {
+  background: linear-gradient(135deg, #2d1b69, #1f1147);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #d6bcff;
+}
+
+.custom-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin: 0 0.3rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.custom-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0%;
+  height: 2px;
+  background-color: #c084fc;
+  transition: width 0.3s ease;
+}
+
+.custom-link:hover::after {
+  width: 100%;
+}
+
+.custom-link:hover {
+  color: white;
+}
+
+.user-text {
+  color: #d8c7ff;
+  font-weight: 500;
+}
+
+.logout-link {
+  color: #ffb4b4 !important;
+  transition: 0.3s ease;
+}
+
+.logout-link:hover {
+  color: #ff8080 !important;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.25s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.08);
+}
+
+.cart-badge {
+  position: absolute;
+
+  top: -8px;
+  right: -10px;
+
+  min-width: 18px;
+  height: 18px;
+
+  padding: 0 5px;
+
+  border-radius: 999px;
+
+  background: #a855f7;
+  color: white;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #2d1b69;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  text-decoration: none;
+
+  transition: transform 0.25s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  color: #5b21b6;
+
+  font-size: 1.2rem;
+
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.35);
+}
+
+.brand-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  color: white;
+}
+
+.brand-logo:hover .brand-text {
+  color: #e9d5ff;
+}
+
+@media (max-width: 991px) {
+
+  .navbar-collapse {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-icon-wrapper { 
+    position: relative; display: inline-block; 
+  }
+}

@@ -1,0 +1,70 @@
+<div class="checkout-page container py-4">
+  <div class="checkout-header mb-4">
+    <p class="checkout-eyebrow mb-2">Order</p>
+    <h2 class="checkout-title mb-2">Checkout</h2>
+    <p class="checkout-subtitle mb-0">
+      Review your order and complete your shipping details.
+    </p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+
+      <div class="checkout-card">
+
+        <!-- ORDER SUMMARY -->
+        <div class="summary-section mb-4">
+          <h5 class="section-title">Order Summary</h5>
+
+          @if (cart.getItems().length === 0) {
+            <div class="empty-summary">
+              Your cart is empty.
+            </div>
+          } @else {
+            <div class="summary-list">
+              @for (item of cart.getItems(); track item.id) {
+                <div class="summary-item">
+                  <span class="summary-name">
+                    {{ item.name }} <span class="summary-qty">(x{{ item.quantity }})</span>
+                  </span>
+                  <span class="summary-price">
+                    {{ item.price * item.quantity | currency }}
+                  </span>
+                </div>
+              }
+            </div>
+
+            <div class="total-row">
+              <span>Total</span>
+              <strong>{{ cart.getTotal() | currency }}</strong>
+            </div>
+          }
+
+        </div>
+
+        <!-- FORM -->
+        <form #form="ngForm" (ngSubmit)="placeOrder(form)" novalidate>
+          <div class="mb-4">
+            <label class="form-label checkout-label">Shipping Address</label>
+            <input
+              type="text"
+              class="form-control checkout-input"
+              [(ngModel)]="shippingAddress"
+              name="shippingAddress"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="btn checkout-btn w-100"
+            [disabled]="!shippingAddress || cart.getItems().length === 0"
+          >
+            Place Order
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

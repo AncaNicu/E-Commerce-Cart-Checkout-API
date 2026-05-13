@@ -1,0 +1,102 @@
+<nav class="navbar navbar-expand-lg custom-navbar px-4 py-2 fixed-top">
+
+  <a class="navbar-brand brand-logo" routerLink="/">
+
+    <div class="brand-icon">
+      <i class="bi bi-bag-heart-fill"></i>
+    </div>
+
+    <span class="brand-text">
+      VioletTech
+    </span>
+
+  </a>
+
+  <button
+    class="navbar-toggler border-0 shadow-none"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarContent"
+    aria-controls="navbarContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="bi bi-list text-white fs-2"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+      <li class="nav-item">
+        <a class="nav-link custom-link" routerLink="/">
+          Products
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link custom-link" routerLink="/checkout">
+          Checkout
+        </a>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+      <li class="nav-item me-lg-3">
+        <a class="nav-link cart-link" routerLink="/cart">
+
+          <span class="cart-icon-wrapper">
+
+            <i class="bi bi-cart3 cart-icon"></i>
+
+            <span class="cart-badge">
+              {{ getCartCount((cartItems$ | async) ?? []) }}
+            </span>
+
+          </span>
+
+        </a>
+      </li>
+
+      @if (!isLoggedIn()) {
+
+        <li class="nav-item">
+          <a class="nav-link custom-link" routerLink="/login">
+            Login
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link custom-link" routerLink="/register">
+            Register
+          </a>
+        </li>
+      }
+
+      @if (isLoggedIn()) {
+
+        <li class="nav-item">
+          <span class="nav-link user-text">
+            Hello, {{ getUserName() }}
+          </span>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link logout-link"
+            routerLink="/login"
+            (click)="logout()"
+          >
+            Logout
+          </a>
+        </li>
+
+      }
+
+    </ul>
+
+  </div>
+
+</nav>

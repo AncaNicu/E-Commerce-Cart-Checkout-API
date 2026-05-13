@@ -1,0 +1,42 @@
+<div class="auth-page container">
+  <div class="auth-card">
+
+    <div class="auth-header">
+      <h2 class="auth-title mb-2">Login</h2>
+    </div>
+
+    <form #form="ngForm" (ngSubmit)="login(form)" novalidate>
+
+      <div class="mb-3">
+        <label class="form-label custom-label">Email</label>
+        <input
+          type="email"
+          class="form-control custom-input"
+          [(ngModel)]="email"
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label custom-label">Password</label>
+        <input
+          type="password"
+          class="form-control custom-input"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn auth-btn w-100"
+        [disabled]="!email || !password"
+      >
+        Login
+      </button>
+
+    </form>
+  </div>
+</div>
