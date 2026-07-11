@@ -8,66 +8,69 @@ body {
 }
 
 .auth-page {
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - 76px); /*scade 76px din inalt totala a ecranului*/
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem 1rem;
+  justify-content: center;/*continutul (auth-card) este centrat pe orizontala*/
+  align-items: center;/*continutul (auth-card) este centrat pe verticala*/
+  padding: 1.5rem 1rem;/*1.5rem pe verticala, 1rem pe orizontala*/
 }
 
 .auth-card {
-  width: 100%;
-  max-width: 430px;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1.6rem;
-  box-shadow: 0 12px 30px rgba(31, 17, 71, 0.10);
-  border: 1px solid rgba(124, 58, 237, 0.08);
+  width: 100%;/*ocupa intreaga latime disponibila*/
+  max-width: 430px;/*latime maxima a cardului nu depaseste 430px*/
+  background: #ffffff;/*culoarea de fundal a cardului*/
+  border-radius: 18px;/*rotunjeste colturile*/
+  padding: 1.6rem;/*spatiu intre margine si elemente de 1.6rem*/
+  box-shadow: 0 12px 30px rgba(31, 17, 71, 0.10);/*umplere cu umbra*/
+  border: 1px solid rgba(124, 58, 237, 0.08);/*margini subtile*/
 }
 
 .auth-header {
-  text-align: center;
-  margin-bottom: 1.3rem;
+  text-align: center;/*centreaza h2 in interiorul div-ului*/
+  margin-bottom: 1.3rem;/*spatiu intre header si elementele de sub el*/
 }
 
 .auth-title {
   font-size: 1.7rem;
-  font-weight: 800;
-  line-height: 1.1;
-  color: #1f1147;
-  margin-bottom: 0.35rem;
+  font-weight: 800;/*cat de boldate sunt literele*/
+  line-height: 1.1;/*distanta dintre liniile titlului (in cazul in care e titlu pe mai multe linii)*/
+  color: #1f1147;/*culoarea textului*/
+  margin-bottom: 0.35rem;/*spatiu extra sub titlu*/
 }
 
 .auth-btn {
   background: linear-gradient(135deg, #7c3aed, #5c12b1);
-  border: none;
-  color: white;
-  font-weight: 700;
+  border: none;/*elimina bordura implicita*/
+  color: white;/*culoarea textului*/
+  font-weight: 700;/*text boldat*/
   border-radius: 12px;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem;/*face butonul mai inalt*/
   font-size: 0.95rem;
-  box-shadow: 0 10px 18px rgba(124, 58, 237, 0.22);
+  box-shadow: 0 10px 18px rgba(124, 58, 237, 0.22);/*umbra in partea de jos*/
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
     background 0.2s ease;
 }
 
+/*se aplica doar pt buton activ, can e cursorul pe el*/
 .auth-btn:hover:not(:disabled) {
   background: linear-gradient(135deg, #5410b3, #3f007f);
-  transform: translateY(-1px);
-  box-shadow: 0 14px 22px rgba(124, 58, 237, 0.28);
+  transform: translateY(-1px);/*se ridica cu 1px cand e cursorul pe el*/
+  box-shadow: 0 14px 22px rgba(124, 58, 237, 0.28);/*o mica umbra*/
   color: white;
 }
 
+/*se aplica doar pt buton dezactivat*/
 .auth-btn:disabled {
   background: linear-gradient(135deg, #b79cf0, #a78bfa);
-  opacity: 0.75;
+  opacity: 0.75;/*1=complet opac, 0= complet transparent */
   cursor: not-allowed;
   box-shadow: none;
   color: white;
 }
 
+/*se executa doar pe dispozitive cu latime maxima de 575px*/
 @media (max-width: 575px) {
   .auth-page {
     align-items: flex-start;

@@ -1,9 +1,9 @@
 
 .custom-label {
-  font-weight: 600;
+  font-weight: 600;/*etichetele sunt semi-boldate*/
   color: #2b214d;
   margin-bottom: 0.35rem;
-  font-size: 0.92rem;
+  font-size: 0.92rem;/*un text de 0.92rem (mai mic decat cel normal)*/
 }
 
 .custom-input {
@@ -13,13 +13,13 @@
   background: #fcfbff;
   color: #1f1147;
   font-size: 0.95rem;
-  transition:
+  transition:/*culoarea se schimba cu o animatie de 0.2s*/
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     background 0.2s ease;
 }
 
-.custom-input:focus {
+.custom-input:focus {/*se aplica doar cand inputul este activ */
   border-color: #7c3aed;
   box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.12);
   background: #ffffff;
